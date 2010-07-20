@@ -1,0 +1,57 @@
+var Commands = {	
+	move: function(params){
+
+		Game.getPlayable()._isMoving = false;
+		Game.getPlayer(params.positions.id).moveTo({
+			x: params.positions.x,
+			y: params.positions.y		
+		});
+	},
+	chat: function(params) {
+		Game.getPlayer(params.id).chat({
+			message: params.message
+		});
+	},
+	newClient: function(params) {
+		
+		var player = new Character(params.id,params.skin,'',params.name);
+		Game.addPlayer(player);
+		player.spawnAt({
+			x: params.x,
+			y: params.y
+		});
+		
+	},
+	goto: function(params) {
+		console.log(params);
+		$(params.positions).each(function(i, item) {
+			
+			Game.getPlayer(params.id).moveTo({
+				x: item.x,
+				y: item.y
+			});
+		})
+	},
+	disconnect: function(params) {
+	
+		
+		var player = Game.getPlayer(params.id)
+		if(player) {
+			player.kill();
+		}
+	},
+	admin_setnight: function(params) {
+		$('#night').fadeIn(2000)
+	},
+	admin_setday: function(params) {
+		$('#night').fadeOut(2000)
+	} 
+}
+
+Weasel.register('move', Commands.move);
+Weasel.register('chat', Commands.chat);
+Weasel.register('newClient', Commands.newClient)
+Weasel.register('disconnect', Commands.disconnect);
+Weasel.register('admin_setnight', Commands.admin_setnight);
+Weasel.register('admin_setday', Commands.admin_setday);
+Weasel.register('goto', Commands.goto);

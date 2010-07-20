@@ -1,0 +1,376 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+body,html {
+
+	height:100%
+	background-color: #e6e6e6;
+	font: 80% "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#menu {
+	border-bottom:1px solid #272727;
+}
+#sidebar {
+	border-right:1px solid #A5A5A5;
+	bottom:0px;
+	left:0;
+	position:fixed;
+	top:40px;
+	width:320px;
+	z-index:5;
+	overflow-y: auto;
+	padding:5px;
+	background: #eee;
+}
+#main {
+	bottom:0px;
+	left:331px;
+	overflow-y:auto;
+	position:fixed;
+	right:0;
+	top:38px;
+	padding:10px;
+	background: #515151 url('../images/main_bg.gif') repeat-x left top;
+}
+
+
+#map {
+	overflow:hidden;
+	width:608px;
+	height:448px;
+	position: relative;
+	background: #fff;
+	border:2px solid #666;
+}
+
+#overlay {
+	width:100%;
+	height:100%;
+	background: #000;
+	opacity: 0.5;
+	position: absolute;
+	z-index:60;
+	display:none;
+}
+#map-container {
+	position: relative;
+	width:608px;
+	height:448px;
+	background: #fff;
+}
+
+#map-container canvas {
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+#canvas-0 {
+	z-index: 10;
+}
+#canvas-1 {
+	z-index: 20;
+}
+#canvas-2 {
+	z-index: 30;
+}
+
+	
+#canvas-3 {
+	z-index: 60;
+}
+#canvas-4 {
+	z-index: 70;
+}
+#canvas-5 {
+	z-index: 80;
+}			
+
+
+#night {
+	width:608px;
+	height:448px;
+	position: absolute;
+	top:0px;
+	left:0px;
+	background: #000;
+	opacity: 0.6;
+	z-index:99999;
+	display:none;
+}
+
+
+div.area {
+	position: absolute;
+	width:608px;
+	height:448px;
+	float:left;
+}
+
+input.chat {
+	width:602px;
+	border:1px inset #ccc;
+	padding:3px;
+}
+
+
+
+
+.character {
+	width:24px;
+	height:32px;
+	background: transparent url('../images/sprites/character.gif') no-repeat left top;
+	position: absolute;
+	z-index:50;
+	top:-8px;
+}
+.character div.bubble {
+	position: relative;
+	top:-29px;
+	left:-13px;
+}
+
+div.character div.special {
+	width:24px;
+	height:32px;	
+	background: transparent url('../images/sprites/objects.gif') no-repeat left top;
+	position: absolute;
+	z-index:51;
+	top:-12px;
+}
+
+div.character div.special.question {
+	background-position: -96px -32px;
+}
+
+div.character div.special.cloud1 {
+	background-position: -144px -127px;
+}
+div.character div.special.cloud2 {
+	background-position: -144px -159px;
+}
+div.character div.special.cloud3 {
+	background-position: -144px -192px;
+}
+
+div.character div.special.sleep1 {
+	background-position: -216px -128px;
+}
+div.character div.special.sleep2 {
+	background-position: -216px -159px;
+}
+div.character div.special.sleep3 {
+	background-position: -216px -192px;
+}
+div.character div.special.sleep4 {
+	background-position: -216px -224px;
+}
+
+
+div.character div.special.spawn1 {
+	background-position: -144px -32px;
+}
+
+div.character div.special.spawn2 {
+	background-position: -168px -32px;
+}
+
+div.character div.special.spawn3 {
+	background-position: -192px -32px;
+}
+
+
+div.bubble {
+	width: 250px;
+	font-size: 0.75em;
+	margin-bottom: 24px;
+}
+
+div.bubble blockquote {
+	margin: 0px;
+	padding: 5px;
+	border: 1px solid #c9c2c1;
+	background-color: #fff;
+}
+
+div.bubble blockquote p {
+	
+	padding: 0px;
+	display:inline;
+	white-space:nowrap;
+}
+
+div.bubble cite {
+	position: relative;
+	margin: 0px;
+	padding: 7px 0px 0px 15px;
+	top: 6px;
+	background: transparent url(../images/tip.gif) no-repeat 20px 0;
+	font-style: normal;
+}
+
+
+
+
+.character.knight,
+.character.knight.bottom {
+	background-position: -167px -64px;
+}
+.character.knight.bottom.move1 {
+	background-position: -143px -64px;
+}
+.character.knight.bottom.move2 {
+	background-position: -192px -64px;
+}
+
+
+.character.knight.top {
+	background-position: -167px 0px;
+}
+.character.knight.top.move1 {
+	background-position: -143px 0px;
+}
+.character.knight.top.move2 {
+	background-position: -192px 0px;
+}
+
+
+.character.knight.right {
+	background-position: -167px -32px;
+}
+.character.knight.right.move1 {
+	background-position: -143px -32px;
+}
+.character.knight.right.move2 {
+	background-position: -192px -32px;
+}
+
+.character.knight.left {
+	background-position: -167px -96px;
+}
+.character.knight.left.move1 {
+	background-position: -143px -96px;
+}
+.character.knight.left.move2 {
+	background-position: -192px -96px;
+}
+
+
+div.field {
+	width:32px;
+	height:32px;
+	position: absolute;
+	background: transparent url('../images/sprites/forest.png') no-repeat left top;
+	background-position: 32px 32px;
+}
+
+
+
+
+
+
+
+#editor {
+	float:left;
+	margin-left: 20px;
+}
+#tileset {
+	
+	background: transparent url('../images/sprites/forest.png') no-repeat left top;
+	width:256px;
+	height:608px;
+	
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+	position: relative;
+}
+#tileset img {
+	z-index:1;
+	position: absolute;
+}
+
+#tileset div.tile {
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:31px;
+	height:31px;
+	border-top:2px solid #ccc;
+	border-left:2px solid #ccc;
+	z-index:2;
+}
+
+#tileset div.tile:hover {
+	background: #fff;
+	-moz-opacity: 0.4;
+	opacity:0.4;
+	cursor: pointer;
+}
+#tileset div.tile.ui-selected {
+	-moz-opacity: 0.5;
+	opacity:0.5;
+	
+	background:#3078ca;
+}
+
+div.cursor {
+	
+	z-index:9999;
+	position: absolute;
+	border:1px solid #000;
+}
+div.cursor div.cursor-tile-inner1 {
+	border:3px solid #fff;
+	height:100%;
+	
+}
+div.cursor div.cursor-tile-inner2 {
+	border:1px solid #000;
+	width:27px;
+	height:27px;
+	
+}
+
+div.dialog {
+	display:none;
+}
+
+div.dialog fieldset {
+	border:0 none;
+	margin-top:25px;
+	padding:0;
+}
+div.dialog fieldset {
+	border:0 none;
+	margin-top:25px;
+	padding:0;
+}
+div.dialog label, div.dialog input {
+	display:block;
+}
+div.dialog input.text {
+	margin-bottom:12px;
+	padding:0.4em;
+	width:95%;
+}
+
+
+/**
+ * Material Database
+ */
+
+#database-tabs div.sidebar {
+	width:200px;
+	float:left;
+}
+#database-tabs div.sidebar select{ 
+	width:180px;
+	height:400px;
+}
+#database-tabs div.content {
+	marign-left:250px;
+	float:left;
+}
+ 
+
