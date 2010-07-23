@@ -47,10 +47,10 @@ var Commands = {
 	} 
 }
 
-Weasel.subscribe('move', Commands.move);
-Weasel.subscribe('chat', Commands.chat);
+Weasel.subscribe('user/move', Commands.move);
+Weasel.subscribe('user/chat', Commands.chat);
 Weasel.subscribe('connect', Commands.newClient)
 Weasel.subscribe('disconnect', Commands.disconnect);
 Weasel.subscribe('admin_setnight', Commands.admin_setnight);
 Weasel.subscribe('admin_setday', Commands.admin_setday);
-Weasel.subscribe('goto', Commands.goto);
+Weasel.subscribe('user/goto', Commands.goto);

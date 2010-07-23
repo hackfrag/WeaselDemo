@@ -45,7 +45,7 @@
 			
 			cursor.observe('click', function() {
 			
-				Weasel.command('goto', {x: cursor.getPosition().x , y: cursor.getPosition().y }, function(params){
+				Weasel.command('user/goto', {x: cursor.getPosition().x , y: cursor.getPosition().y }, function(params){
 					
 						
 					Game.getPlayable().moveTo({
@@ -61,7 +61,7 @@
 			
 			
 		
-				Weasel.command('loadMap', function(params) {
+				Weasel.command('map/load', function(params) {
 				
 					Game.loadMap(params.map);
 					
@@ -108,7 +108,7 @@
 			
 					.addClass('sending');
 					
-				Weasel.command('chat', {
+				Weasel.command('user/chat', {
 						message: $('#message').val()
 					}, function(params) {
 						Game.getPlayable().chat({

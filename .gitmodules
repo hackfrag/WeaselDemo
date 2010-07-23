@@ -1,0 +1,3 @@
+[submodule "Weasel"]
+	path = Weasel
+	url = git://github.com/hackfrag/Weasel.git
